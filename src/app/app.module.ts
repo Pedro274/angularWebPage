@@ -7,6 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { DoorsComponent } from './doors/doors.component';
 import { HardwareComponent } from './hardware/hardware.component';
+import { DoorComponent } from './doors/door/door.component';
+import {InventoryService} from './inventory.service';
+
+
 
 @NgModule({
   declarations: [
@@ -14,13 +18,14 @@ import { HardwareComponent } from './hardware/hardware.component';
     HeaderComponent,
     HomeComponent,
     DoorsComponent,
-    HardwareComponent
+    HardwareComponent,
+    DoorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [InventoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

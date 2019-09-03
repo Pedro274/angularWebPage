@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hardware',
@@ -8,15 +8,16 @@ import { Router } from '@angular/router';
 })
 export class HardwareComponent implements OnInit {
 
-  constructor( private router:Router) { }
+  constructor( private router:Router,
+               private route:ActivatedRoute,) { }
 
   ngOnInit() {
   }
 
 
   goBackhome() {
-    this.router.navigate([''])
+    this.router.navigate([''],{relativeTo:this.route})
   }
 
-  
+
 }
