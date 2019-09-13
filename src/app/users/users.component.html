@@ -1,0 +1,26 @@
+
+<div class="container">
+  
+    <form (ngSubmit)= "onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="formGroupExampleInput">User Name</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" name='name' [(ngModel)] = "user.name" required>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Input id</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Id" name='id' [(ngModel)] = "user.id">
+        </div>
+        <button class="btn btn-primary" type="submit">Add User</button>
+    </form> 
+
+    <div class="row mt-0">
+      <div class="col-6 d-flex justify-content-center">
+        <app-user></app-user>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+</div>
+
