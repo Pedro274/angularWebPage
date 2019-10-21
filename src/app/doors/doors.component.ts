@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { InventoryService } from '../inventory.service';
 import { Door } from '../models/doors'
+import { DoorsService } from './doors.service';
 
 
 @Component({
@@ -15,10 +15,11 @@ export class DoorsComponent implements OnInit {
   doorName: string;
 
 
-  constructor(private router:Router, private inventory:InventoryService) { }
+  constructor(private router:Router, private inventory:DoorsService) { }
 
   ngOnInit() {
     this.doors = this.inventory.doors;  
+    console.log(this.doors)
   } 
 
 

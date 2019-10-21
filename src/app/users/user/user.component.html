@@ -3,5 +3,6 @@
       <h5 class="card-title">Hello {{user.name}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">This is your id: {{user.id}}</h6>
       <a [routerLink]="['/users', user.id]">card details</a>
+      <button type="button" class="btn btn-danger" id="delete" (click)='deleteUser(user.id)'>Delete</button>
     </div>
 </div>

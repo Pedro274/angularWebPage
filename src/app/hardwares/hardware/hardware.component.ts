@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { InventoryService } from '../../inventory.service';
+import { InventoryService } from '../../services/inventory.service';
 import { Hardware } from '../../models/hardware';
 
 

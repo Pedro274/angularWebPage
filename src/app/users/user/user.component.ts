@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InventoryService } from '../../inventory.service';
+import { InventoryService } from '../../services/inventory.service';
 import { User } from '../../models/user';
 
 @Component({
@@ -15,6 +15,10 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.inventory.users
+  }
+
+  deleteUser(userId) {
+    this.inventory.getUserIndex(userId).subscribe(userIndex => this.users.splice(userIndex,1))
   }
 
 }

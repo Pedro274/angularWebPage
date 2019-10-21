@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { InventoryService } from '../../inventory.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Door } from '../../models/doors';
+import { DoorsService } from '../doors.service';
 
 @Component({
   selector: 'app-door',
@@ -16,12 +15,15 @@ export class DoorComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: InventoryService
+    private service:DoorsService,
   ) {}
 
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
+   this.route.params.subscribe(route => {
+    const id = route['id'];
     this.service.getDoor(id).subscribe(door => this.door = door)
+    })
+    
 
     // this.route.paramMap.pipe(
     //   switchMap((params: ParamMap) => this.service.getDoor(params.get('id')))

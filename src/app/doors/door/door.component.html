@@ -1,8 +1,31 @@
 <div class="container">
-    <p>id: {{door.id}}</p>
-    <p>name: {{door.name}}</p>
-    <p>width: {{door.width}}</p>
-    <p>height: {{door.height}}</p>
+    <div class="row">
+        <div class="col-6">
+            <div class="card mb-4 shadow-sm">
+                <img [src]="door.imageUrl" class="card-img-top img-fluid" [alt]="door.name">
+                <div class="card-body">
+                    <p class="card-text">
+                        {{door.name}}
+                    </p>
+                </div>
+            </div>      
+        </div>
+        <div class="col-6 ">
+                <p>id: {{door.id}}</p>
+                <p>name: {{door.name}}</p>
+                <p>width: {{door.width}}</p>
+                <p>height: {{door.height}}</p> 
+                <button type="button" class="btn btn-large  btn-success">Edit</button>
+        </div>
+        <div>
+               <form (ngSubmit)= "onSubmit(f)" #f="ngForm">
+                   
+               </form>
+               
+
+        </div>
+    </div>
+    
     <button class="btn btn-sm btn-outline-primary" (click)='goDoors()'>Go back</button>
 </div>
 

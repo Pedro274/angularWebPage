@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Hardware } from '../models/hardware';
-import { InventoryService } from '../inventory.service';
+import { InventoryService } from '../services/inventory.service';
 
 @Component({
   selector: 'app-hardwares',

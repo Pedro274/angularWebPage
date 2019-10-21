@@ -8,16 +8,18 @@ import { HomeComponent } from './home/home.component';
 import { DoorsComponent } from './doors/doors.component';
 import { HardwaresComponent } from './hardwares/hardwares.component';
 import { DoorComponent } from './doors/door/door.component';
-import {InventoryService} from './inventory.service';
+import { InventoryService } from './services/inventory.service';
 import { HardwareComponent } from './hardwares/hardware/hardware.component';
 import { UsersComponent } from './users/users.component';
 import { FormsModule } from '@angular/forms';
 import { UserComponent } from './users/user/user.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ServerComponent } from './server/server.component'
+import { ServerService } from './server/server.service';
+import { ServerInstanceComponent } from './server/server-instance/server-instance.component';
+import { DoorsService } from './doors/doors.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContactsComponent,
     UserDetailsComponent,
     PageNotFoundComponent,
+    ServerComponent,
+    ServerInstanceComponent,
     
   ],
   imports: [
@@ -40,7 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     FormsModule
   ],
-  providers: [InventoryService],
+  providers: [InventoryService,ServerService,DoorsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

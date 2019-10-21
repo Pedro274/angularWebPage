@@ -4,4 +4,5 @@ export interface Door {
     height: string;
     width: string;
     imageUrl: string;
+    edit:string;
 }
