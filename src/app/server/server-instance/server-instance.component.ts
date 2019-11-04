@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../server.service';
 import { Server} from '../models/server';
 
@@ -15,16 +15,7 @@ export class ServerInstanceComponent implements OnInit {
  
   ngOnInit() {
     this.servers = this.service.servers;
-    this.service.serverChanged.subscribe(upDateServers => console.log(upDateServers))
   };
 
-  changeStatus(status:string, serverId:number ) {
-      this.service.changeStatusOfUser(status, serverId)
-  };
 
-  Delete(name:string) {
-    this.service.findIndexOfItemSelected(name).subscribe(index => {
-      this.servers.splice(index,1)
-    })
-  }
 }

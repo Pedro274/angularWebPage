@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Server } from './models/server'
 import { Observable,of } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Observable,of } from 'rxjs';
 export class ServerService {
 
   constructor() { }
-    serverChanged = new EventEmitter<Server[]>();
+   
     servers:Server[] = [{name: 'Pedro', status: 'Active'}];
 
     addServer(server:Server) {
