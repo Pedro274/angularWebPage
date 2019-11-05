@@ -10,15 +10,19 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
 import { ContactsComponent } from './contacts/contacts.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ServerComponent } from './server/server.component';
+import { EditServerComponent } from './server/edit-server/edit-server.component';
+
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
   { path:'contacts', component: ContactsComponent},
-  { path:'server', component: ServerComponent},
-  { path: 'doors', component: DoorsComponent},
-  { path: 'doors/:id', component: DoorComponent},
-  { path: 'users', component: UsersComponent, children:[
+  { path:'server', component: ServerComponent, children:[
+    { path:':name/:edit', component: EditServerComponent},
+  ]}, 
+  { path:'doors', component: DoorsComponent},
+  { path:'doors/:id', component: DoorComponent},
+  { path:'users', component: UsersComponent, children:[
     {path: ':id', component:UserDetailsComponent},
   ]},
   { path: 'hardwares', component: HardwaresComponent, children:[

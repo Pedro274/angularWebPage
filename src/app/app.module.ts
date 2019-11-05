@@ -20,6 +20,7 @@ import { ServerComponent } from './server/server.component'
 import { ServerService } from './server/server.service';
 import { ServerInstanceComponent } from './server/server-instance/server-instance.component';
 import { DoorsService } from './doors/doors.service';
+import { EditServerComponent } from './server/edit-server/edit-server.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { DoorsService } from './doors/doors.service';
     PageNotFoundComponent,
     ServerComponent,
     ServerInstanceComponent,
-    
+    EditServerComponent
   ],
   imports: [
     BrowserModule,

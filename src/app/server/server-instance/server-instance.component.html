@@ -5,7 +5,9 @@
     </div>
     <div class="card-body">
       <h5 class="card-title">{{server.status}}</h5>
-      <button type="button" class="btn btn-success" >Edit</button>
+      <button type="button" class="btn btn-success"
+       [routerLink]= "['/server',server.name,'edit']" 
+       [queryParams]="{allowEdit: server.name === 'Pedro'? '1' : '0'}">Edit</button>
     </div>
 </div>
 

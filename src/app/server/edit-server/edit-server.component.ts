@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-edit-server',
@@ -7,13 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditServerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {}
-
   allowEdit:boolean = true;
 
 
+
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      
+    })
+  }
+
+  
+
+  
 
 
 
