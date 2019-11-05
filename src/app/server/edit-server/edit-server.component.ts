@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params,Router } from '@angular/router';
 import { ServerService } from '../server.service';
 
 @Component({
@@ -10,22 +10,32 @@ import { ServerService } from '../server.service';
 export class EditServerComponent implements OnInit {
 
   allowEdit:boolean = true;
+  id:string;
 
-  constructor(private route: ActivatedRoute,
-              private service: ServerService) {}
+  constructor(private activeRoute: ActivatedRoute,
+              private service: ServerService,
+              private route: Router
+              ) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe((param: Params) => {
+    this.activeRoute.queryParams.subscribe((param: Params) => {
       this.allowEdit = param['allowEdit'] === '1' ? true : false;
     })
+    this.activeRoute.params.subscribe(params => {
+      this.id = params['id'];
+    })
   }
-
-  changeStatus(status){
-    
-    
-  }
-
   
+  changeStatus(status:string) {
+    this.service.findIndexOfItemSelected(this.id).subscribe(serverIndex => {
+      this.service.changeStatusOfUser(status,serverIndex);
+    })
+  }
+  
+  Delete() {
+    this.service.removeServer(this.id);
+    this.route.navigate(['server']); // ask Ormani about this 
+  }
 
 
 

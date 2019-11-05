@@ -25,7 +25,11 @@ export class ServerService {
      return of(this.servers.findIndex(e => e.name === name))
     }
   
-
+    removeServer(serverName) {
+      this.findIndexOfItemSelected(serverName).subscribe(index => {
+        this.servers.splice(index,1)
+      })
+    }
 
 
 

@@ -16,5 +16,6 @@ export class ServerComponent implements OnInit {
   }
   onSubmit(server: NgForm){
     this.service.addServer(server.value); 
+    console.log(server.value);
   }
 }
